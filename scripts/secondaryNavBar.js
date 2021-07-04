@@ -71,8 +71,6 @@ const changeSearchFilter = (e) => {
                 }
             })
 
-            // $('#search-input-secondary-appbar').change(onSubmit)
-
             $('#search-input-label').html('Data de nascimento')
 
             $.datepicker.regional['pt-br'] = {
