@@ -177,6 +177,24 @@ body {
     text-transform: uppercase;
 }
 
+.active {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+.dropdown-menu-custom {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: none;
+    border: 0;
+}
+
 .dropdown-menu a {
     cursor: pointer;
 }

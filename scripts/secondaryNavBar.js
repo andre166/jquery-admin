@@ -1,6 +1,30 @@
 const changeSearchFilter = (e) => {
-    let value = e.currentTarget.innerHTML
+    let element = $(e)
+    let isSameElement = false
+
     let name = e.currentTarget.attributes['value']['value']
+
+    let searchFilterMenu = $('#search-filter-menu').children()
+
+    searchFilterMenu.each(function (i, el) {
+        let actualElement = $(el)
+        let value = actualElement.attr('value')
+
+        if (value == name) {
+            let hasActive = actualElement.hasClass('active')
+            if (!hasActive) {
+                actualElement.addClass('active')
+            } else {
+                isSameElement = true
+            }
+        } else {
+            actualElement.removeClass('active')
+        }
+    })
+
+    if (isSameElement) {
+        return
+    }
 
     let searchInput = $('#search-input-secondary-appbar')
 
