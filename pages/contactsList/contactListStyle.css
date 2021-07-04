@@ -7,6 +7,13 @@
     justify-content: space-between;
 }
 
+.main-container {
+    width: 100%;
+    height: calc(100% - 72px);
+    padding: 8px;
+    background: #fafafa;
+}
+
 #birthdayContainer {
     height: max-content;
     max-height: 200px;

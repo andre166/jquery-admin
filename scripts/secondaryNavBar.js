@@ -53,10 +53,17 @@ const changeSearchFilter = (e) => {
 
                 let value = $(e.target).val()
 
+                if (value == '') {
+                    $('#search-input-secondary-appbar').removeClass(
+                        'is-invalid'
+                    )
+                    return
+                }
+
                 if (value.match(regex)) {
-                    let tooltip = $(
-                        '#search-input-secondary-appbar'
-                    ).removeClass('is-invalid')
+                    $('#search-input-secondary-appbar').removeClass(
+                        'is-invalid'
+                    )
 
                     onSubmit(value)
                 } else {
@@ -255,5 +262,10 @@ $(() => {
 })
 
 const onSubmit = (value) => {
-    console.log('value', value)
+    $('#search-input-secondary-appbar').datepicker('hide')
+
+    let cardsContainer = $('.cards-container')
+    let mainContainer = $('.main-container')
+
+    mainContainer.load('/components/loadContainer/loadContainer.html')
 }
