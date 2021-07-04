@@ -19,14 +19,6 @@ const changeSearchFilter = (e) => {
                 .attr('type', 'email')
             $('#search-input-label').html('Email')
         })
-    } else if (name === 'language') {
-        searchInput.parent().load('./secondaryNavBar/defaultInput.html', () => {
-            $('#search-input-secondary-appbar').attr(
-                'placeholder',
-                'Português, inglês...'
-            )
-            $('#search-input-label').html('Linguagem')
-        })
     } else if (name === 'birthday') {
         searchInput.parent().load('./secondaryNavBar/dateInput.html', () => {
             $('#search-input-secondary-appbar').mask('00/00/0000')
@@ -91,6 +83,17 @@ const changeSearchFilter = (e) => {
     }
 }
 
+const activePills = (el) => {
+    let element = $(el)
+    let hasActive = element.hasClass('activeBirthday-pill')
+
+    if (hasActive) {
+        element.removeClass('activeBirthday-pill')
+    } else {
+        element.addClass('activeBirthday-pill')
+    }
+}
+
 $(() => {
     $('#secondary-appbar').load(
         './secondaryNavBar/secondaryNavBar.html',
@@ -100,6 +103,105 @@ $(() => {
                 .on('click', (e) => {
                     changeSearchFilter(e)
                 })
+
+            let birthdayContainer = $('#birthdayContainer')[0]
+            console.log("$('#birthdayContainer')", birthdayContainer)
+            let birthdays = [
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+                { id: 1, birthday: 21 },
+                { id: 2, birthday: 22 },
+                { id: 3, birthday: 29 },
+                { id: 4, birthday: 25 },
+                { id: 5, birthday: 31 },
+                { id: 6, birthday: 19 },
+                { id: 7, birthday: 15 },
+            ]
+
+            birthdays.forEach((b) => {
+                let pills = ` 
+                    <span class="badge badge-pill py-2 mx-1 birthday-pill" onclick="activePills(this)" >
+                        ${b.birthday}
+                    </span>
+                `
+
+                birthdayContainer.insertAdjacentHTML('beforeend', pills)
+            })
         }
     )
 })

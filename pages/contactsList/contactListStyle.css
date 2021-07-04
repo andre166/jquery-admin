@@ -7,6 +7,27 @@
     justify-content: space-between;
 }
 
+#birthdayContainer {
+    height: max-content;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.birthday-pill {
+    cursor: pointer;
+    background: #ddd;
+    margin: 4px;
+}
+
+.activeBirthday-pill {
+    color: #fff;
+    background: var(--primary);
+}
+
+.birthday-pill:hover {
+    filter: brightness(90%);
+}
+
 .search-input-label {
     display: block;
     color: #fafafa;
