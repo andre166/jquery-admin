@@ -145,7 +145,10 @@
                     <div class="search-input-label" id="search-input-label">
                         Nome
                     </div>
-                    <form class="input-group my-lg-0">
+                    <form
+                        class="my-lg-0 needs-validation"
+                        id="search-form-secondary-appbar"
+                    >
                         <input
                             id="search-input-secondary-appbar"
                             class="form-control"
@@ -153,6 +156,12 @@
                             placeholder="Pesquisar..."
                             aria-label="Search"
                         />
+                        <div
+                            id="search-tooltip-secondary-appbar"
+                            class="invalid-tooltip"
+                        >
+                            Looks good!
+                        </div>
                     </form>
                 </div>
 

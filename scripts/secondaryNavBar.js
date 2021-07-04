@@ -46,6 +46,26 @@ const changeSearchFilter = (e) => {
     } else if (name === 'birthday') {
         searchInput.parent().load('./secondaryNavBar/dateInput.html', () => {
             $('#search-input-secondary-appbar').mask('00/00/0000')
+
+            $('#search-input-secondary-appbar').on('input', function (e) {
+                let regex =
+                    /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/gm
+
+                let value = $(e.target).val()
+
+                if (value.match(regex)) {
+                    let tooltip = $(
+                        '#search-input-secondary-appbar'
+                    ).removeClass('is-invalid')
+
+                    onSubmit(value)
+                } else {
+                    $('#search-input-secondary-appbar').addClass('is-invalid')
+                }
+            })
+
+            // $('#search-input-secondary-appbar').change(onSubmit)
+
             $('#search-input-label').html('Data de nascimento')
 
             $.datepicker.regional['pt-br'] = {
@@ -102,7 +122,11 @@ const changeSearchFilter = (e) => {
             }
             $.datepicker.setDefaults($.datepicker.regional['pt-br'])
 
-            $('#search-input-secondary-appbar').datepicker()
+            $('#search-input-secondary-appbar').datepicker({
+                onSelect: function (dateText) {
+                    onSubmit(this.value)
+                },
+            })
         })
     }
 }
@@ -229,3 +253,7 @@ $(() => {
         }
     )
 })
+
+const onSubmit = (value) => {
+    console.log('value', value)
+}
