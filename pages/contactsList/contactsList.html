@@ -15,38 +15,71 @@
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
         />
-        <script
+        <!-- <script
             src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
             crossorigin="anonymous"
-        ></script>
+        ></script> -->
+
+        <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap"
             rel="stylesheet"
         />
+
+        <link
+            rel="stylesheet"
+            href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+        />
+
+        <!-- Project imports  -->
         <link
             rel="stylesheet"
             type="text/css"
             media="screen"
-            href="./globalStyle.css"
+            href="../../globalStyle.css"
         />
         <link
             rel="stylesheet"
             type="text/css"
             media="screen"
-            href="../components/navbar/navbarStyle.css"
+            href="../../styles/datepicker.css"
         />
-        <link rel="shortcut icon" href="./ico.ico" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="../../components/navbar/navbarStyle.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="./contactListStyle.css"
+        />
+        <link rel="shortcut icon" href="../../ico.ico" />
+        <!-- Libs -->
+        <script src="../../lib/moment.min.js"></script>
     </head>
 
     <body>
+        <div id="principal-appbar-preventblink"></div>
         <div id="principal-appbar"></div>
-        <div id="root-container">Contatos</div>
+        <div id="root-container">
+            <div id="secondary-appbar"></div>
+            <div class="main-content">
+                <div class="cards-container"></div>
+            </div>
+        </div>
     </body>
 
-    <script src="../scripts/navbar.js"></script>
+    <script src="../../scripts/navbar.js"></script>
+    <script src="../../scripts/secondaryNavBar.js"></script>
+    <script src="../../scripts/contactList.js"></script>
 
     <!-- <script
         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -63,4 +96,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </html>

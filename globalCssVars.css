@@ -1,5 +1,8 @@
 :root {
     --appbar-height: 56px;
+    --appbar-height-negative: -56px;
     --primary: #008541;
+    --primary-btn-hover: #007539;
     --secondary: #fdc82f;
+    --shadow: -2px -2px 4px rgb(0 0 0 / 20%), 2px 2px 4px rgb(0 0 0 / 20%);
 }

@@ -1,5 +1,5 @@
-$(function () {
-    $('#principal-appbar').load('../components/navbar/navbar.html', () => {
+$(() => {
+    $('#principal-appbar').load('/components/navbar/navbar.html', function () {
         let name = ''
 
         let url = window.location.pathname
@@ -8,6 +8,6 @@ $(function () {
 
         name = lastPath.replace('.html', '')
 
-        $(`#principal-navigation [name=${name}]`).addClass('active')
+        $(`#principal-navigation [name=${name}]`).addClass('active active-icon')
     })
 })

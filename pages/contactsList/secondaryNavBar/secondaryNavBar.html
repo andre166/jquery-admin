@@ -1,0 +1,98 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="d-flex justify-content-between w-100 align-items-center">
+        <button
+            type="button"
+            class="custom-incon-btn custom-incon-btn-white"
+            data-toggle="modal"
+            data-target="#exampleModal"
+        >
+            <span class="material-icons"> filter_alt </span>
+        </button>
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="exampleModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title d-flex align-items-center">
+                            <span class="material-icons mr-1">
+                                filter_list
+                            </span>
+                            Filtros
+                        </h5>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                        >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">
+                            Save changes
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fim Modal -->
+
+        <div class="d-flex">
+            <div class="d-flex align-items-center">
+                <div class="mr-2">
+                    <div class="search-input-label" id="search-input-label">
+                        Nome
+                    </div>
+                    <form class="input-group my-lg-0">
+                        <input
+                            id="search-input-secondary-appbar"
+                            class="form-control"
+                            type="search"
+                            placeholder="Pesquisar..."
+                            aria-label="Search"
+                        />
+                    </form>
+                </div>
+
+                <div class="btn-group d-flex align-items-center">
+                    <button
+                        type="button"
+                        class="custom-incon-btn custom-incon-btn-transp"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        style="margin-bottom: -12px"
+                    >
+                        <span class="material-icons text-white">
+                            more_vert
+                        </span>
+                    </button>
+                    <div
+                        class="dropdown-menu"
+                        style="margin-left: -150px; margin-top: 18px"
+                        id="search-filter-menu"
+                    >
+                        <a class="dropdown-item" value="name">Nome</a>
+                        <a class="dropdown-item" value="email">Email</a>
+                        <a class="dropdown-item" value="language">Linguagem</a>
+                        <a class="dropdown-item" value="birthday"
+                            >Data de nascimento</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
